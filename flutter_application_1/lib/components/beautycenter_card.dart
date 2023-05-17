@@ -3,7 +3,7 @@ import 'package:flutter_application_1/screens/beautycenter_details.dart';
 import 'package:flutter_application_1/utils/config.dart';
 import 'package:flutter_application_1/main.dart';
 
-//bunu stateless olarak değiştiriyoruz
+// stateless olarak değiştiriyoruz
 class BeautyCenterCard extends StatelessWidget {
   const BeautyCenterCard({
     Key? key,

@@ -30,40 +30,40 @@ class _SignUpFormState extends State<SignUpForm> {
           TextFormField(
             controller: _nameController,
             keyboardType: TextInputType.text,
-            cursorColor: Config.primaryColor,
+            cursorColor: Color.fromARGB(255, 217, 205, 220),
             decoration: const InputDecoration(
               hintText: 'Username',
               labelText: 'Username',
               alignLabelWithHint: true,
               prefixIcon: Icon(Icons.person_outlined),
-              prefixIconColor: Config.primaryColor,
+              prefixIconColor: Color.fromARGB(255, 217, 205, 220),
             ),
           ),
           Config.spaceSmall,
           TextFormField(
             controller: _emailController,
             keyboardType: TextInputType.emailAddress,
-            cursorColor: Config.primaryColor,
+            cursorColor: Color.fromARGB(255, 217, 205, 220),
             decoration: const InputDecoration(
               hintText: 'Email Address',
               labelText: 'Email',
               alignLabelWithHint: true,
               prefixIcon: Icon(Icons.email_outlined),
-              prefixIconColor: Config.primaryColor,
+              prefixIconColor: Color.fromARGB(255, 217, 205, 220),
             ),
           ),
           Config.spaceSmall,
           TextFormField(
             controller: _passController,
             keyboardType: TextInputType.visiblePassword,
-            cursorColor: Config.primaryColor,
+            cursorColor: Color.fromARGB(255, 217, 205, 220),
             obscureText: obsecurePass,
             decoration: InputDecoration(
                 hintText: 'Password',
                 labelText: 'Password',
                 alignLabelWithHint: true,
                 prefixIcon: const Icon(Icons.lock_outline),
-                prefixIconColor: Config.primaryColor,
+                prefixIconColor: Color.fromARGB(255, 217, 205, 220),
                 suffixIcon: IconButton(
                     onPressed: () {
                       setState(() {
@@ -77,7 +77,7 @@ class _SignUpFormState extends State<SignUpForm> {
                           )
                         : const Icon(
                             Icons.visibility_outlined,
-                            color: Config.primaryColor,
+                            color: Color.fromARGB(255, 217, 205, 220),
                           ))),
           ),
           Config.spaceSmall,

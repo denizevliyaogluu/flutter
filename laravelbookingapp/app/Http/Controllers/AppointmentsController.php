@@ -57,4 +57,6 @@ class AppointmentsController extends Controller
         ], 200);
     }
 
+
+
 }

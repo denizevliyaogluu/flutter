@@ -53,6 +53,7 @@ class _AppointmentPageState extends State<AppointmentPage> {
           schedule['status'] = FilterStatus.cancel;
           break;
       }
+
       return schedule['status'] == status;
     }).toList();
 
@@ -118,7 +119,7 @@ class _AppointmentPageState extends State<AppointmentPage> {
                     width: 100,
                     height: 40,
                     decoration: BoxDecoration(
-                      color: Config.primaryColor,
+                      color: Color.fromARGB(255, 217, 205, 220),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Center(
@@ -136,112 +137,114 @@ class _AppointmentPageState extends State<AppointmentPage> {
             ),
             Config.spaceSmall,
             Expanded(
-              child: SingleChildScrollView(
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: filteredSchedules.length,
-                  itemBuilder: ((context, index) {
-                    var schedule = filteredSchedules[index];
-                    bool isLastElement = filteredSchedules.length + 1 == index;
-                    return Card(
-                      shape: RoundedRectangleBorder(
-                        side: const BorderSide(
-                          color: Colors.grey,
-                        ),
-                        borderRadius: BorderRadius.circular(20),
+              //child: SingleChildScrollView(
+              child: ListView.builder(
+                //shrinkWrap: true,
+                //physics: const NeverScrollableScrollPhysics(),
+                itemCount: filteredSchedules.length,
+                itemBuilder: ((context, index) {
+                  var schedule = filteredSchedules[index];
+                  bool isLastElement = filteredSchedules.length + 1 == index;
+                  return Card(
+                    shape: RoundedRectangleBorder(
+                      side: const BorderSide(
+                        color: Colors.grey,
                       ),
-                      margin: !isLastElement
-                          ? const EdgeInsets.only(bottom: 20)
-                          : EdgeInsets.zero,
-                      child: Padding(
-                        padding: const EdgeInsets.all(15),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            Row(
-                              children: [
-                                CircleAvatar(
-                                  backgroundImage: NetworkImage(
-                                      "http://127.0.0.1:8000${schedule['beautycenter_profile']}"),
-                                ),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      schedule['beautycenter_name'],
-                                      style: const TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w700,
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      height: 5,
-                                    ),
-                                    Text(
-                                      schedule['category'],
-                                      style: const TextStyle(
-                                        color: Colors.grey,
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            ScheduleCard(
-                              date: schedule['date'],
-                              day: schedule['day'],
-                              time: schedule['time'],
-                            ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Expanded(
-                                  child: OutlinedButton(
-                                    onPressed: () {},
-                                    child: const Text(
-                                      'Cancel',
-                                      style:
-                                          TextStyle(color: Config.primaryColor),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    margin: !isLastElement
+                        ? const EdgeInsets.only(bottom: 20)
+                        : EdgeInsets.zero,
+                    child: Padding(
+                      padding: const EdgeInsets.all(15),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Row(
+                            children: [
+                              CircleAvatar(
+                                backgroundImage: NetworkImage(
+                                    "http://127.0.0.1:8000${schedule['beautycenter_profile']}"),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    schedule['beautycenter_name'],
+                                    style: const TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w700,
                                     ),
                                   ),
-                                ),
-                                const SizedBox(
-                                  width: 20,
-                                ),
-                                Expanded(
-                                  child: OutlinedButton(
-                                    style: OutlinedButton.styleFrom(
-                                      backgroundColor: Config.primaryColor,
-                                    ),
-                                    onPressed: () {},
-                                    child: const Text(
-                                      'Reschedule',
-                                      style: TextStyle(color: Colors.white),
+                                  const SizedBox(
+                                    height: 5,
+                                  ),
+                                  Text(
+                                    schedule['category'],
+                                    style: const TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w600,
                                     ),
                                   ),
+                                ],
+                              ),
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          ScheduleCard(
+                            date: schedule['date'],
+                            day: schedule['day'],
+                            time: schedule['time'],
+                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Expanded(
+                                child: OutlinedButton(
+                                  onPressed: () {},
+                                  child: const Text(
+                                    'Cancel',
+                                    style: TextStyle(
+                                        color:
+                                            Color.fromARGB(255, 217, 205, 220)),
+                                  ),
                                 ),
-                              ],
-                            ),
-                          ],
-                        ),
+                              ),
+                              const SizedBox(
+                                width: 20,
+                              ),
+                              Expanded(
+                                child: OutlinedButton(
+                                  style: OutlinedButton.styleFrom(
+                                    backgroundColor:
+                                        Color.fromARGB(255, 217, 205, 220),
+                                  ),
+                                  onPressed: () {},
+                                  child: const Text(
+                                    'Reschedule',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
-                    );
-                  }),
-                ),
+                    ),
+                  );
+                }),
               ),
             ),
+            //),
           ],
         ),
       ),
@@ -274,7 +277,7 @@ class ScheduleCard extends StatelessWidget {
         children: <Widget>[
           const Icon(
             Icons.calendar_today,
-            color: Config.primaryColor,
+            color: Color.fromARGB(255, 217, 205, 220),
             size: 15,
           ),
           const SizedBox(
@@ -289,7 +292,7 @@ class ScheduleCard extends StatelessWidget {
           ),
           const Icon(
             Icons.access_alarm,
-            color: Config.primaryColor,
+            color: Color.fromARGB(255, 217, 205, 220),
             size: 17,
           ),
           const SizedBox(

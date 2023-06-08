@@ -94,12 +94,6 @@ class _HomePageState extends State<HomePage> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          const SizedBox(
-                            child: CircleAvatar(
-                              radius: 30,
-                              backgroundImage: AssetImage('assets/phoebe.png'),
-                            ),
-                          ),
                         ],
                       ),
                       Config.spaceSmall,
@@ -119,7 +113,7 @@ class _HomePageState extends State<HomePage> {
                               beautycenterCat.length, (index) {
                             return Card(
                               margin: const EdgeInsets.only(right: 20),
-                              color: Config.primaryColor,
+                              color: Color.fromARGB(255, 217, 205, 220),
                               child: Padding(
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 15, vertical: 10),
@@ -160,7 +154,7 @@ class _HomePageState extends State<HomePage> {
                       beautycenter.isNotEmpty
                           ? AppointmentCard(
                               beautycenter: beautycenter,
-                              color: Config.primaryColor,
+                              color: Color.fromARGB(255, 217, 205, 220),
                             )
                           : Container(
                               width: double.infinity,

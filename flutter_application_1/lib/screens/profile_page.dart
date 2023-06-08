@@ -21,39 +21,7 @@ class _ProfilePageState extends State<ProfilePage> {
           flex: 4,
           child: Container(
             width: double.infinity,
-            color: Config.primaryColor,
-            child: Column(
-              children: const <Widget>[
-                SizedBox(
-                  height: 110,
-                ),
-                CircleAvatar(
-                  radius: 65.0,
-                  backgroundImage: AssetImage('assets/phoebe.png'),
-                  backgroundColor: Colors.white,
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  'Phoebe Buffay',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  '23 Years Old | Female',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 15,
-                  ),
-                ),
-              ],
-            ),
+            color: Color.fromARGB(255, 217, 205, 220),
           ),
         ),
         Expanded(
@@ -96,7 +64,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               child: const Text(
                                 "Profile",
                                 style: TextStyle(
-                                  color: Config.primaryColor,
+                                  color: Color.fromARGB(255, 217, 205, 220),
                                   fontSize: 15,
                                 ),
                               ),
@@ -120,7 +88,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               child: const Text(
                                 "History",
                                 style: TextStyle(
-                                  color: Config.primaryColor,
+                                  color: Color.fromARGB(255, 217, 205, 220),
                                   fontSize: 15,
                                 ),
                               ),
@@ -164,7 +132,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               child: const Text(
                                 "Log Out",
                                 style: TextStyle(
-                                  color: Config.primaryColor,
+                                  color: Color.fromARGB(255, 217, 205, 220),
                                   fontSize: 15,
                                 ),
                               ),

@@ -16,7 +16,6 @@ class Reviews extends Model
         'reviews',
         'reviewed_by',
         'status',
-
     ];
 
     public function user(){
